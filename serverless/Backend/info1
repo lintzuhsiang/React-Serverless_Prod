@@ -1,0 +1,71 @@
+ {
+"Version": "2012-10-17",
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "mobileanalytics:PutEvents",
+      "cognito-sync:*",
+      "cognito-identity:*"
+    ],
+    "Resource": [
+        "*"
+    ] },
+    {
+      "Effect": "Allow",
+      "Action": [
+"s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Heali/private/${cognito-identity.amazonaws.com:sub}/*"
+        ] 
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "execute-api:Invoke"
+        ],
+      "Resource": [
+        "arn:aws:execute-api:us-east-1:*:ztq1w03nse/*/*/*"
+        ] 
+    }
+    ]
+}
+
+
+us-east-1:59fa6686-b05a-416b-8bc9-4249f0222638
+
+--username admin_example \ 
+--password Shine0125951! \ 
+--app-client-id 4c4gi0p46cc72j4kltpspe4nh3 \  
+--identity-pool-id us-east-1:59fa6686-b05a-416b-8bc9-4249f0222638 \
+--cognito-region us-east-1 \
+--path-template '/notes' \
+--user-pool-id  us-east-1_jH9TueFGP \
+--invoke-url https://ztq1w03nse.execute-api.us-east-1.amazonaws.com/dev \
+--api-gateway-region us-east-1
+
+*/
+pool-id: us-east-1_alhcpnVxb
+app-client: 4vmtqir95fe0v32dbl065ogs8a
+/*
+
+aws cognito-idp sign-up --region us-east-1 --client-id 4c4gi0p46cc72j4kltpspe4nh3 --username admin_example --password Shine0125951! --user-attributes Name="email",Value="a1995080130@gmail.com"
+aws cognito-idp sign-up --region us-east-1 --client-id 4c4gi0p46cc72j4kltpspe4nh3 --username root_example --password Shine0125951! --user-attributes Name="email",Value="a1995080130@gmail.com"
+{
+    "UserConfirmed": false,
+    "CodeDeliveryDetails": {
+        "Destination": "a***@g***.com",
+        "DeliveryMedium": "EMAIL",
+        "AttributeName": "email"
+    },
+    "UserSub": "b3e6f6eb-d7b1-493e-98ec-82aad519b411"
+}
+
+ aws cognito-idp admin-confirm-sign-up --region us-east-1 --user-pool-id us-east-1_jH9TueFGP --username root_example
+
+ npx aws-api-gateway-cli-test  --username='a1995080130@gmail.com' --password='Shine0125951!' --app-client-id='4vmtqir95fe0v32dbl065ogs8a' --identity-pool-id='us-east-1:59fa6686-b05a-416b-8bc9-4249f0222638'  --cognito-region='us-east-1' --path-template='/notes' --user-pool-id='us-east-1_alhcpnVxb' --invoke-url='https://48nmq1vfgi.execute-api.us-east-1.amazonaws.com/dev'  --api-gateway-region='us-east-1' --method='POST' --body='{"content":"hello world","attachment":"hello.jpg"}'
+ 
+
+ access key: AKIAW44FXQLJXQI5N6Y5
+ secret key: 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
